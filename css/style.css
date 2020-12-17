@@ -82,6 +82,6 @@ hr {
 }
 @media only screen and (max-width: 800px) {
 	.container {
-		min-width: max-content;
+		min-width: 90%;
 	}
 }
