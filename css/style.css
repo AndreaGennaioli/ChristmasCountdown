@@ -41,7 +41,6 @@ h1 {
 	margin-right: auto;
 	max-width: max-content;
 	margin-top: 10vh;
-	margin-bottom: -1vh;
 }
 
 
@@ -73,6 +72,19 @@ hr {
 	margin-top: 10px;
 	font-size: 12px;
 	text-align: center;
+}
+
+button {
+	outline: none;
+	background: none;
+	border: none;
+	border-radius: 10px;
+	color: #fff;
+	text-shadow: 0 0 4px #000;
+}
+button:hover {
+	cursor: pointer;
+	box-shadow: 0 0 4px #000;
 }
 
 @media only screen and (max-height: 820px) {

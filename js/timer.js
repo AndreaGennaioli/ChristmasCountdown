@@ -1,4 +1,4 @@
-window.onload = function () {
+function timer() {
 	setInterval(() => {
 		let time = new Date("December 25, 2020 00:00:00").getTime() - new Date().getTime();
 		let days = Math.floor(time / (1000 * 60 * 60 * 24));
@@ -21,4 +21,4 @@ window.onload = function () {
 		document.getElementById('timer-milliseconds').innerHTML = time + "ms";
 
 	}, 1);
-};
+}
