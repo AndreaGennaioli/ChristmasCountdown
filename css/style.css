@@ -9,12 +9,17 @@ body {
 	color: white;
 }
 
+.body {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
 .container {
-	margin-left: auto;
-	margin-right: auto;
+	justify-self: center;
 	max-width: max-content;
 	min-width: 800px;
-	z-index: 999999;
 	text-shadow: 0 0 5px #000;
 
 	display: grid;
@@ -72,7 +77,6 @@ hr {
 	margin-top: 10px;
 	font-size: 12px;
 	text-align: center;
-	font-weight: bold;
 }
 
 button {
@@ -83,18 +87,36 @@ button {
 	color: #fff;
 	text-shadow: 0 0 4px #000;
 }
+
 button:hover {
 	cursor: pointer;
 	box-shadow: 0 0 4px #000;
 }
 
-@media only screen and (max-height: 820px) {
+@media only screen and (max-width: 415px) {
 	.timer h1 {
-		font-size: 5rem;
+		font-size: 4rem;
+	}
+	.other-timers h2 {
+		font-size: 1rem
 	}
 }
+@media only screen and (max-width: 320) {
+	.timer h1 {
+		font-size: 3rem;
+	}
+}
+
 @media only screen and (max-width: 800px) {
 	.container {
-		min-width: 90%;
+		justify-self: center;
+		width: 90%;
+		min-width: min-content;
+		max-width: 90%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.timer h1 {
+		font-size: 4rem;
 	}
 }
