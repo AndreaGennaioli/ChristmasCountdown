@@ -104,12 +104,20 @@
 		var audio = new Audio(playList[0]);
 		var index = 1;
 		audio.volume = 0.06;
+		function onend () {
+			audio = new Audio(playList[index]);
+			index = index < playList.length - 1 ? index + 1 : 0
+			audio.volume = 0.06;
+			audio.onended = () => {
+				setTimeout(() => {
+					onend();
+				}, 1000)
+			}
+			audio.play();
+		}
 		audio.onended = () => {
 			setTimeout(() => {
-				audio = new Audio(playList[index]);
-				index = index < playList.length - 1 ? index + 1 : 0
-				audio.volume = 0.06;
-				audio.play();
+				onend();
 			}, 1000)
 		}
 		document.getElementById('volume').addEventListener('click', (e) => {
