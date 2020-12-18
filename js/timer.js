@@ -15,6 +15,7 @@ function timer() {
 		hours = (hours < 10) ? "0" + hours : hours;
 		minutes = (minutes < 10) ? "0" + minutes : minutes;
 		seconds = (seconds < 10) ? "0" + seconds : seconds;
+		document.getElementById('timer-days').innerHTML = days + "d";
 		document.getElementById('timer-hours').innerHTML = hours + "h";
 		document.getElementById('timer-minutes').innerHTML = minutes + "m";
 		document.getElementById('timer-seconds').innerHTML = seconds + "s";
