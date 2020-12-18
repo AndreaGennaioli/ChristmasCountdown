@@ -94,11 +94,20 @@ button:hover {
 }
 
 @media only screen and (max-width: 450px) {
+	.container {
+		min-width: 90%;
+		width: 90%;
+		max-width: 90%;
+
+	}
 	.timer h1 {
 		font-size: 4rem;
 	}
 	.other-timers h2 {
 		font-size: 1rem
+	}
+	.other-timers p {
+		font-size: 0.8rem
 	}
 }
 @media only screen and (max-width: 320) {
