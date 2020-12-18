@@ -6,6 +6,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>ChristmasCountdown</title>
 	<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+	<meta name="keywords" content="christmas, countdown, christmas countdown, andrea, gennaioli, andreagennaioli">
+	<meta name="author" content="Andrea Gennaioli">
+	<meta name="description" content="Christmas countdown! Happy Christmas!">
+	<meta name="subject" content="christmas, countdown">
+	<meta name="robots" content="index,follow" />
+	<meta name="url" content="https://christmascountdown.andreagennaioli.com/">
+	<meta name="identifier-URL" content="https://christmascountdown.andreagennaioli.com/">
+
+	<meta name="og:title" content="Christmas Countdown" />
+	<meta name="og:url" content="https://christmascountdown.andreagennaioli.com/" />
+	<meta name="og:image" content="https://christmascountdown.andreagennaioli.com/logo.png" />
+	<meta name="og:description" content="Christmas countdown! Happy Christmas!" />
 
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/snowflake.css">
@@ -104,7 +116,8 @@
 		var audio = new Audio(playList[0]);
 		var index = 1;
 		audio.volume = 0.06;
-		function onend () {
+
+		function onend() {
 			audio = new Audio(playList[index]);
 			index = index < playList.length - 1 ? index + 1 : 0
 			audio.volume = 0.06;
