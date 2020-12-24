@@ -1,6 +1,6 @@
 function timer() {
 	setInterval(() => {
-		let time = new Date("December 25, 2020 00:00:00").getTime() - new Date().getTime();
+		let time = new Date("December 25, 2021 00:00:00").getTime() - new Date().getTime();
 		let days = Math.floor(time / (1000 * 60 * 60 * 24));
 		let hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		let minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
