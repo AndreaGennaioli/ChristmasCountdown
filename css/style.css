@@ -44,6 +44,12 @@ body {
 	padding: 0;
 }
 
+#player-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .header .player .controls {
 	display: flex;
 	justify-content: space-between;
