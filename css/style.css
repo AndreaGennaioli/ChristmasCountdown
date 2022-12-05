@@ -4,128 +4,187 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background-color: rgb(231, 0, 0);
+	background-color: rgb(255, 0, 0);
 	font-family: 'Poppins', sans-serif;
 	color: white;
 }
 
-.body {
-	width: 100%;
-	height: 100%;
+body {
 	display: flex;
-	justify-content: center;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 .container {
-	justify-self: center;
-	max-width: max-content;
-	min-width: 800px;
-	text-shadow: 0 0 5px #000;
+	max-width: 950px;
+	width: 100%;
+	margin: 130px auto;
 
-	display: grid;
-	grid-template-rows: max-content;
-	align-content: center;
+	height: 10px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.header .top {
+	display: flex;
+	width: 100%;
+}
+
+.header .player {
+	height: 50px;
+	border-radius: 4px;
+	background-color: #FF4444;
+	display: flex;
+	align-items: center;
+	padding: 0;
+}
+
+.header .player .controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 110px;
+	height: 100%;
+	padding: 0 20px;
+	border-right: 2px solid #EE6F6F;
+}
+
+.header .player .right {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: 20px;
+}
+
+.header .player h2 {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 30px;
+	margin: 0;
+	margin-left: 20px;
+}
+
+.header .player .controls img:not(.disabled):hover {
+	opacity: .8;
+}
+.header .player .controls img:not(.disabled):active {
+	opacity: .7;
+}
+
+.header .player .controls img {
+	height: 17px;
+	cursor: pointer;
+
+	transition: opacity .1s ease-in-out
+}
+
+h2 {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 33px;
+
+	margin: 0;
+	margin-bottom: 5px;
 }
 
 h1 {
-	font-size: 1.5rem;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 100px;
+	line-height: 135px;
+
+	text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.header .top .icons {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+.header .top .icons * {
+	height: 25px;
+	cursor: pointer;
+}
+
+.box-shadow {
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.text-shadow {
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .timer {
-	margin-top: 0vh;
-	text-align: center;
-	text-shadow: 0 0 7px #000;
+	display: flex;
+	justify-content: center;
 }
-
 .timer h1 {
-	font-size: 10vh;
+	width: 1ch;
+	text-align: center;
+}
+/* .timer .columns {
+	width: .5ch;
+} */
+
+.card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+
+	background: #FF4444;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	width: 100%;
+	height: 76px;
+	margin-bottom: 15px;
+
+	transition: background-color .3s ease-in-out;
 }
 
-.i {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: max-content;
-	margin-top: 10vh;
+.card .title {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 38px;
+
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.card .timer-others {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 45px;
 
-h1,
-h2,
-p {
-	margin: 0;
-	margin-block-start: 0;
-	margin-block-end: 0;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.other-timers {
+.card.modified {
+	background-color: #FF9344;
+}
+
+#timer-milliseconds {
 	display: flex;
 	align-items: center;
-	width: 100%
+	text-align: right;
 }
 
-.other-timers h2 {
-	margin-left: auto;
-}
-
-hr {
-	border: none;
-	border-top: 1px solid #fff;
-	margin: 0
-}
-
-.credits {
-	margin-top: 10px;
-	font-size: 12px;
-	text-align: center;
-}
-
-button {
-	outline: none;
-	background: none;
-	border: none;
-	border-radius: 10px;
-	color: #fff;
-	text-shadow: 0 0 4px #000;
-}
-
-button:hover {
-	cursor: pointer;
-	box-shadow: 0 0 4px #000;
-}
-
-@media only screen and (max-width: 450px) {
-	.container {
-		min-width: 90%;
-		width: 90%;
-		max-width: 90%;
-
-	}
-	.timer h1 {
-		font-size: 4rem;
-	}
-	.other-timers h2 {
-		font-size: 1rem
-	}
-	.other-timers p {
-		font-size: 0.8rem
-	}
-}
-@media only screen and (max-width: 320) {
-	.timer h1 {
-		font-size: 3rem;
-	}
-}
-
-@media only screen and (max-width: 800px) {
-	.container {
-		justify-self: center;
-		width: 90%;
-		min-width: min-content;
-		max-width: 90%;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.timer h1 {
-		font-size: 4rem;
-	}
+img.disabled {
+	opacity: .7;
+	cursor: default !important;
 }

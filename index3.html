@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ChristmasCountdown</title>
+	<link rel="shortcut icon" href="logo.png" type="image/x-icon">
+	<meta name="keywords" content="christmas, countdown, christmas countdown, andrea, gennaioli, andreagennaioli">
+	<meta name="author" content="Andrea Gennaioli">
+	<meta name="description" content="Christmas countdown! Happy Christmas!">
+	<meta name="subject" content="christmas, countdown">
+	<meta name="robots" content="index,follow" />
+	<meta name="url" content="https://christmascountdown.andreagennaioli.com/">
+	<meta name="identifier-URL" content="https://christmascountdown.andreagennaioli.com/">
+
+	<meta name="og:title" content="Christmas Countdown" />
+	<meta name="og:url" content="https://christmascountdown.andreagennaioli.com/" />
+	<meta name="og:image" content="https://christmascountdown.andreagennaioli.com/logo.png" />
+	<meta name="og:description" content="Christmas countdown! Happy Christmas!" />
+
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./css/snowflake.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<!-- Snowflakes -->
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+	</div>
+	<!-- Body -->
+	<div class="body">
+
+		<div class="container">
+			<span class="i">Countdown di Natale <button id="volume"><i id="volume-icon"
+						class="fas fa-volume-mute"></i></button></span>
+			<div class="timer">
+				<h1 id="timer">
+
+				</h1>
+			</div>
+			<h1>Altre Modalità di Countdown:</h1>
+			<div class="others">
+				<div class="day other-timers">
+					<p>
+						Countdown in Giorni
+					</p>
+					<h2 id="timer-days"></h2>
+				</div>
+				<hr>
+				<div class="hours other-timers">
+					<p>
+						Countdown in Ore
+					</p>
+					<h2 id="timer-hours"></h2>
+				</div>
+				<hr>
+				<div class="minutes other-timers">
+					<p>
+						Countdown in Minuti
+					</p>
+					<h2 id="timer-minutes"></h2>
+				</div>
+				<hr>
+				<div class="seconds other-timers">
+					<p>
+						Countdown in Secondi
+					</p>
+					<h2 id="timer-seconds"></h2>
+				</div>
+				<hr>
+				<div class="seconds other-timers">
+					<p>
+						Countdown in Millisecondi
+					</p>
+					<h2 id="timer-milliseconds"></h2>
+				</div>
+			</div>
+			<div class="credits">
+				by Andrea Gennaioli<br>andreagennaioli#0680
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var playList = [
+			'./Jingle Bell Rock Remix (A Trappy Christmas).mp3',
+			'./LET IT SNOW! LET IT SNOW! (Trap Remix).mp3',
+			'./Caskada - Last Christmas (Dance Remix 2012).mp3'
+		];
+		var audio = new Audio(playList[0]);
+		var index = 1;
+		audio.volume = 0.06;
+
+		function onend() {
+			audio = new Audio(playList[index]);
+			index = index < playList.length - 1 ? index + 1 : 0
+			audio.volume = 0.06;
+			audio.onended = () => {
+				setTimeout(() => {
+					onend();
+				}, 1000)
+			}
+			audio.play();
+		}
+		audio.onended = () => {
+			setTimeout(() => {
+				onend();
+			}, 1000)
+		}
+		document.getElementById('volume').addEventListener('click', (e) => {
+			e.preventDefault();
+			if (document.getElementById('volume-icon').classList.contains('fa-volume-up')) {
+				document.getElementById('volume-icon').classList.remove('fa-volume-up');
+				document.getElementById('volume-icon').classList.add('fa-volume-mute');
+				audio.pause();
+			} else {
+				document.getElementById('volume-icon').classList.remove('fa-volume-mute');
+				document.getElementById('volume-icon').classList.add('fa-volume-up');
+				audio.play();
+			}
+		});
+
+		window.onload = () => {
+			timer();
+		}
+	</script>
+	<script src="./js/timer.js"></script>
+</body>
+
+</html>
