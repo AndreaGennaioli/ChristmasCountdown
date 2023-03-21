@@ -18,7 +18,14 @@ function timer() {
 	setInterval(() => {
 		let element = document.getElementById('timer-milliseconds')
 		element.innerHTML = ''
-		let time = new Date("December 25, 2022 00:00:00").getTime() - new Date().getTime();
+
+		var today = new Date();
+		var nextChristmas = new Date(today.getFullYear(), 11, 25);
+		if (today.getMonth() == 11 && today.getDate() > 25) {
+			nextChristmas.setFullYear(nextChristmas.getFullYear() + 1);
+		}
+
+		let time = nextChristmas.getTime() - new Date().getTime();
 		let days = Math.floor(time / (1000 * 60 * 60 * 24));
 		let hours = Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		let minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
@@ -31,17 +38,24 @@ function timer() {
 		
 		
 		// document.getElementById('timer').innerHTML = days + ":" + hours + ":" + minutes + ":" + seconds;
-		document.getElementById('timer1').innerHTML = days.toString()[0]
-		document.getElementById('timer2').innerHTML = days.toString()[1]
+		if(days.toString().length == 3) {
+			document.getElementById('timer1').innerHTML = days.toString()[0]
+			document.getElementById('timer2').innerHTML = days.toString()[1]
+			document.getElementById('timer3').innerHTML = days.toString()[2]
+		} else {
+			document.getElementById('timer1').style.display = 'none';
+			document.getElementById('timer2').innerHTML = days.toString()[0]
+			document.getElementById('timer3').innerHTML = days.toString()[1]
+		}
 
-		document.getElementById('timer3').innerHTML = hours.toString()[0]
-		document.getElementById('timer4').innerHTML = hours.toString()[1]
+		document.getElementById('timer4').innerHTML = hours.toString()[0]
+		document.getElementById('timer5').innerHTML = hours.toString()[1]
 
-		document.getElementById('timer5').innerHTML = minutes.toString()[0]
-		document.getElementById('timer6').innerHTML = minutes.toString()[1]
+		document.getElementById('timer6').innerHTML = minutes.toString()[0]
+		document.getElementById('timer7').innerHTML = minutes.toString()[1]
 
-		document.getElementById('timer7').innerHTML = seconds.toString()[0]
-		document.getElementById('timer8').innerHTML = seconds.toString()[1]
+		document.getElementById('timer8').innerHTML = seconds.toString()[0]
+		document.getElementById('timer9').innerHTML = seconds.toString()[1]
 		
 		seconds = Math.floor((time / 1000)),
 		minutes = Math.floor((time / (1000 * 60))),
