@@ -17,6 +17,7 @@ function shuffle(array) {
 }
 
 var playList = [
+  './songs/Last Christmas Indian Christmas Remix.mp3',
   './songs/Jingle Bell Rock Remix (A Trappy Christmas).mp3',
   './songs/LET IT SNOW! LET IT SNOW! (Trap Remix).mp3',
   './songs/Caskada - Last Christmas (Dance Remix 2012).mp3',
